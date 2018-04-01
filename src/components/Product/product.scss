@@ -1,0 +1,30 @@
+@import '../../scss/utils/variables';
+@import '../../scss/utils/mixins';
+
+.product {
+  width: 90%;
+  margin: auto;
+  border: 1px solid $primary-blue;
+  padding: 10px;
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    @include shortText();
+    width: 100%;
+    font-weight: normal;
+    margin: 10px 0 15px;
+  }
+
+  &__price {
+    color: #5c5c5c;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+}
