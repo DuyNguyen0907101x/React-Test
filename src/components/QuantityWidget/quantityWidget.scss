@@ -1,0 +1,38 @@
+@import '../../scss/utils/mixins';
+
+.quantity-widget {
+  $widget-border-color: #969696;
+  $widget-btn-bg-color: #d7d7d7;
+
+  @include inline-flex();
+  @include align-items(stretch);
+  min-height: 20px;
+
+  &__add, &__subtract {
+    background-color: $widget-btn-bg-color;
+    border: 1px solid $widget-border-color;
+    padding: 0 8px;
+    cursor: pointer;
+
+    &:hover {
+      @include transition(background-color .25s ease);
+      background-color: lighten($widget-border-color, 20%);
+    }
+  }
+
+  &__add {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-right: 0;
+  }
+  &__amount {
+    border: 1px solid $widget-border-color;
+    min-width: 30px;
+    text-align: center;
+  }
+  &__subtract {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-left: 0;
+  }
+}

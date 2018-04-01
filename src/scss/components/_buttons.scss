@@ -1,0 +1,30 @@
+.btn {
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+  cursor: pointer;
+  @include transition(all .25s ease);
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .85;
+  }
+
+  &--primary {
+    @include button-variant(#5b5b5b, #d7d7d7, #a3a3a3);
+  }
+}
+
+.btn-action {
+  border-radius: 50%;
+  background-color: #8d8d8d;
+  border: 0;
+  color: $white;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten(#8d8d8d, 5%);
+  }
+}

@@ -1,0 +1,51 @@
+@import '../../scss/utils/variables';
+
+.cart {
+  border: 1px solid $primary-blue;
+  width: 100%;
+  padding: 0 20px;
+
+  @media screen and (max-width: 767px) {
+    overflow-x: auto;
+  }
+  
+  &__list {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      border-bottom: 1px solid $primary-blue;
+
+      th {
+        font-weight: normal;
+        text-align: left;
+      }
+
+      th, td {
+        padding: 10px;
+        height: 30px;
+        vertical-align: bottom;
+      }
+
+      td {
+        &:first-child {
+          min-width: 200px;
+          width: 200px;
+        }
+        &:nth-child(2) {
+          min-width: 100px;
+          width: 100px;
+        }
+        &:nth-child(3) {
+          min-width: 150px;
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  &__total-amount {
+    margin: 15px 0;
+    text-align: right;
+  }
+}

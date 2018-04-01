@@ -2,6 +2,7 @@ var path = require('path');
 const webpack = require('webpack');
 const publicPath = '/dist/build/';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -16,7 +17,11 @@ module.exports = {
       template: './index.html'
     }),
     //Auto replacement of page when i save some file, even css
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    //Copy static asset files
+    new CopyWebpackPlugin([
+      { from: path.join(__dirname, 'src/assets'), to: 'assets' } 
+    ])
   ],
   mode: 'development',
 
