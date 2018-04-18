@@ -6,9 +6,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
-  //Content 
+  //Content
   entry: './index.js',
-  // A SourceMap without column-mappings ignoring loaded Source Maps. 
+  // A SourceMap without column-mappings ignoring loaded Source Maps.
   devtool: 'cheap-module-source-map',
   plugins: [
     //simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation. You can either let the plugin generate an HTML file for you, supply your own template using lodash templates or use your own loader.
@@ -20,7 +20,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     //Copy static asset files
     new CopyWebpackPlugin([
-      { from: path.join(__dirname, 'src/assets'), to: 'assets' } 
+      { from: path.join(__dirname, 'src/assets'), to: 'assets' }
     ])
   ],
   mode: 'development',
@@ -28,7 +28,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, publicPath),
     filename: '[name].bundle.js',
-    publicPath: publicPath,
+    publicPath: '',
     sourceMapFilename: '[name].map',
   },
 
@@ -46,12 +46,12 @@ module.exports = {
   },
   module: {
     rules: [
-     { 
+     {
         test: /\.scss$/,
         use: [{
           loader: "style-loader"
         }, {
-          loader: "css-loader" 
+          loader: "css-loader"
         }, {
           loader: "sass-loader"
         }]
